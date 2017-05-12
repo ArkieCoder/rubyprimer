@@ -38,7 +38,7 @@ end
 def get_input(question)
     print question
     STDOUT.flush
-    gets.chomp
+    STDIN.gets.chomp
 end
 
 def print_paragraph(para, mod=nil)
@@ -165,10 +165,18 @@ def read_json_file(file_name)
     JSON.parse(file)
 end
 
-def process_toc()
+def process_toc(lesson_id=nil)
     toc = read_json_file('lessons/toc.json')
+
     toc['lessons'].each do |lesson_file|
-        process_lesson("lessons/#{lesson_file}")
+        if lesson_id 
+            if lesson_file == "#{lesson_id}.json"
+                print_paragraph("\n\nSkipping to lesson: #{lesson_id}!")
+                process_lesson("lessons/#{lesson_id}.json")
+            end
+        else
+            process_lesson("lessons/#{lesson_file}")
+        end
     end
 end
 
@@ -191,8 +199,11 @@ def process_lesson(lesson_file)
     end
 end
 
+def main(args)
+    print_welcome()
+    press_enter()
+    lesson_id = args[0]
+    process_toc(lesson_id)
+end
 ########################################################
-print_welcome()
-press_enter()
-
-process_toc()
+main(ARGV)

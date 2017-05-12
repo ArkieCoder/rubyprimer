@@ -1,0 +1,77 @@
+{
+    "subsections": [{
+        "name": "Introduction to Strings",
+        "items": [{
+            "type": "paragraph",
+            "value": "String construction"
+        },
+        {
+            "type": "paragraph",
+            "value": "In doing lies the true path, so let us begin by doing. Type 'edit' and then type \"RubyMonk\" in the editor (remember to include the double quotes)."
+        },
+        {
+            "type": "paragraph",
+            "value": "After you've edited the file, type 'run' to see what happens."
+        },
+        {
+            "type": "test_example",
+            "value": "1.0.0"
+        },
+        {
+            "type": "paragraph",
+            "value": "Strings are key to communicating with a user and programming apprentices will encounter and start manipulating strings from the earliest stages of their journey. In this lesson, we will explore some of the tools Ruby provides to create and manipulate strings."
+        },
+        {
+            "type": "paragraph",
+            "value": "Literal forms"
+        },
+        {
+            "type": "paragraph",
+            "value": "String construction has what is known as a literal form - the interpreter treats anything surrounded with single quotes (') or double quotes(\") as a string. In other words, both 'RubyMonk' and \"RubyMonk\" will create instances of strings."
+        },
+        {
+            "type": "paragraph",
+            "value": "It's your turn now; go ahead and create a string that contains the name of the current month. Like, 'April', or 'December'."
+        },
+        {
+            "type": "test_example",
+            "value": "1.0.1"
+        },
+        {
+            "type": "paragraph",
+            "value": "Action etches deeper into the memory than mere words. Recreate the string in the exercise above using double quotes (\"). You'll see that the tests pass the same way as they did before."
+        },
+        {
+            "type": "test_example",
+            "value": "1.0.2"
+        },
+        {
+            "type": "paragraph",
+            "value": "The single quoted and double quoted approaches have some differences, which we will look into later. For most purposes they are equivalent."
+        },
+        {
+            "type": "paragraph",
+            "value": "All Strings are instances of the Ruby String class which provides a number of methods to manipulate the string. Now that you have successfully mastered creating strings let's take a look at some of the most commonly used methods."
+        },
+        {
+            "type": "paragraph",
+            "value": "String Length"
+        },
+        {
+            "type": "paragraph",
+            "value": "As a programmer, one of the common things you need to know about a String is its length. Instead of merely telling you how to do this, let me share a secret about the Ruby API with you: Try the obvious! The Ruby core libraries are very intuitive, and with a little practice you can effortlessly convert instructions in plain English to Ruby."
+        },
+        {
+            "type": "paragraph",
+            "value": "Test your intuition and try to change the code below to return the length of the string 'RubyMonk'."
+        },
+        {
+            "type": "test_example",
+            "value": "1.0.3"
+        },
+        {
+            "type": "paragraph",
+            "value": "That shouldn't have taxed your intuition too much! Let's move on to slightly more complex concepts."
+        }]
+    }]
+}
