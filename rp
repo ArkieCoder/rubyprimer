@@ -1,5 +1,6 @@
-#!/home/jhr/.rvm/rubies/ruby-1.9.3-p484/bin/ruby
+#!/usr/bin/ruby
 
+require 'bundler/setup'
 require 'colorize'
 require 'figlet'
 require 'tempfile'
