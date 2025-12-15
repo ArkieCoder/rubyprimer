@@ -2,37 +2,33 @@
 
 require 'bundler/setup'
 require 'colorize'
-require 'figlet'
+require 'ruby_figlet'
 require 'tempfile'
 require 'rspec'
 require 'rspec/core/formatters/progress_formatter'
 require 'json'
 
-load 'lib/justify.rb'
+load 'lib/stringformat.rb'
 load 'lib/sayings.rb'
 
 def print_header(header)
     puts ""
     puts "==========================="
-    font = Figlet::Font.new('fonts/standard.flf')
-    figlet = Figlet::Typesetter.new(font)
-    puts figlet[header].magenta
+    figlet = RubyFiglet::Figlet.new(header, 'standard')
+    puts figlet.to_s.magenta
     puts "==========================="
     puts ""
 end
 
 def print_welcome()
     message = <<-WELCOME
-
-
-    Welcome to the Ruby Primer.  This is a console version of the Ruby Primer
-    found at http://rubymonk.com/learning/books/1-ruby-primer, maintained
-    by C42 Engineering.  This is a program written in ruby that runs actual
-    ruby code snippets in the ruby interpreter on your system.  It is intended
-    to be interactive, fun, and educational.  Enjoy!
-
+Welcome to the Ruby Primer.  This is a console version of the Ruby Primer
+found at http://rubymonk.com/learning/books/1-ruby-primer, maintained
+by C42 Engineering.  This is a program written in ruby that runs actual
+ruby code snippets in the ruby interpreter on your system.  It is intended
+to be interactive, fun, and educational.  Enjoy!
     WELCOME
-    puts message.yellow
+    puts "\n#{message.format}\n\n"
 end
 
 def get_input(question)
@@ -42,11 +38,12 @@ def get_input(question)
 end
 
 def print_paragraph(para, mod=nil)
-    paratext = para.chomp.justify.cyan
+    paratext = para.chomp
     if mod
         puts paratext.send(mod)
     else
-        puts paratext
+        puts ""
+        puts paratext.format
     end 
     puts ""
 end

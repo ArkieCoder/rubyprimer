@@ -3,11 +3,11 @@
         "name": "Syntactic Sugar for Special Methods",
         "items": [{
             "type": "paragraph",
-            "value": "As an observant initiate, you've probably noticed that in the last lesson, Integer objects list mathematical operators like '+' and '-' amont their methods.  You probably also thought to yourself that invoking the '+' method like so - '1.+(2)' - to add two numbers would be ... clumsy."
+            "value": "As an observant initiate, you've probably noticed that in the last lesson, `Integer` objects list mathematical operators like `+` and `-` amont their methods.  You probably also thought to yourself that invoking the `+` method like so - `1.+(2)` - to add two numbers would be ... clumsy."
         },
         {
             "type": "paragraph",
-            "value": "It is, though it works just fine - try for yourself by adding '4' to '3' in the exercise below."
+            "value": "It is, though it works just fine - try for yourself by adding `4` to `3` in the exercise below."
         },
         {
             "type": "test_example",
@@ -37,11 +37,11 @@
         },
         {
             "type": "paragraph",
-            "value": " +  -  *  /  =  ==  !=  >  <  >=  <=  []"
+            "value": " `+`  `-`  `*`  `/`  `=`  `==`  `!=`  `>`  `<`  `>=`  `<=`  `[]`"
         },
         {
             "type": "paragraph",
-            "value": "This last method ('[]') you've probably already seen in the lesson that covers Arrays, and is arguably the most unique in its syntax.  Not only does it not require a period, it also encloses the arguments to itself.  Here's a quick example to refresh your memory."
+            "value": "This last method (`[]`) you've probably already seen in the lesson that covers Arrays, and is arguably the most unique in its syntax.  Not only does it not require a period, it also encloses the arguments to itself.  Here's a quick example to refresh your memory."
         },
         {
             "type": "example",

@@ -15,7 +15,7 @@
         },
         {
             "type": "paragraph",
-            "value": "Roleplaying as an object in your program is an integral part of object-oriented programming.  To know which object you are at the moment, one may use the keyword 'self'."
+            "value": "Roleplaying as an object in your program is an integral part of object-oriented programming.  To know which object you are at the moment, one may use the keyword `self`."
         },
         {
             "type": "example",
@@ -26,7 +26,7 @@
         },
         {
             "type": "paragraph",
-            "value": "As you can see, if you don't specify which object you are, you automatically play the role of the 'main' object that Ruby provides us by default."
+            "value": "As you can see, if you don't specify which object you are, you automatically play the role of the `main` object that Ruby provides us by default."
         },
         {
             "type": "paragraph",
@@ -44,7 +44,7 @@
         },
         {
             "type": "paragraph",
-            "value": "In the example below, we call the method 'even?' on the object that is the number '2' by placing a period (.) after the object, then adding in the name of the method we want to invoke."
+            "value": "In the example below, we call the method `even?` on the object that is the number `2` by placing a period (`.`) after the object, then adding in the name of the method we want to invoke."
         },
         {
             "type": "example",
@@ -55,11 +55,11 @@
         },
         {
             "type": "paragraph",
-            "value": "Invoking a method on an object inevitably generates a response.  This response is always another object. Calling the method 'next' on the object '1' has it give us the next consecutive value, '2'."
+            "value": "Invoking a method on an object inevitably generates a response.  This response is always another object. Calling the method `next` on the object `1` has it give us the next consecutive value, `2`."
         },
         {
             "type": "paragraph",
-            "value": "One may also chain method invocations by simply adding more periods and method names sequentially - each method in the chain is called on the result of the previous method.  Go on and try it by invoking 'next' twice on '1' to get '3'."
+            "value": "One may also chain method invocations by simply adding more periods and method names sequentially - each method in the chain is called on the result of the previous method.  Go on and try it by invoking `next` twice on `1` to get `3`."
         },
         {
             "type": "test_example",
