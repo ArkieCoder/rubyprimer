@@ -1,7 +1,7 @@
 {
   "subsections": [
     {
-      "name": "Looking up methods",
+      "name": "Looking Up Methods",
       "items": [
         {
           "type": "header",
@@ -32,7 +32,7 @@
       ]
     },
     {
-      "name": "Invoking methods with arguments",
+      "name": "Invoking Methods with Arguments",
       "items": [
         {
           "type": "paragraph",

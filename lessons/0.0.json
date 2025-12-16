@@ -1,7 +1,7 @@
 {
   "subsections": [
     {
-      "name": "Everything is an object",
+      "name": "Everything Is An Object",
       "items": [
         {
           "type": "paragraph",
@@ -40,7 +40,7 @@
       ]
     },
     {
-      "name": "Talking to objects",
+      "name": "Talking to Objects",
       "items": [
         {
           "type": "paragraph",
