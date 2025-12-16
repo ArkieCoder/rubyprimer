@@ -162,6 +162,32 @@ def read_json_file(file_name)
   JSON.parse(file)
 end
 
+def print_toc
+  toc = read_json_file('lessons/toc.json')
+  max_name_length = 0
+  toc['lessons'].each do |lesson|
+    lesson_data = read_json_file("lessons/#{lesson}")
+    lesson_data['subsections'].each do |sub|
+      max_name_length = [max_name_length, sub['name'].length].max
+    end
+  end
+  width = 10 + max_name_length
+  puts ""
+  puts "Table of Contents".center(width).bold.underline
+  toc['lessons'].each do |lesson|
+    id = lesson.sub('.json', '')
+    puts "    • #{id}"
+    lesson_data = read_json_file("lessons/#{lesson}")
+    lesson_data['subsections'].each do |sub|
+      puts "      ◦ #{sub['name']}"
+    end
+  end
+  puts (" " * width).bold.underline
+  puts ""
+  puts "  To begin learning with a specific lesson (such as 0.0), run: #{$0} 0.0"
+  puts ""
+end
+
 def process_toc(lesson_id=nil)
   toc = read_json_file('lessons/toc.json')
 
@@ -197,10 +223,14 @@ def process_lesson(lesson_file)
 end
 
 def main(args)
-  print_welcome()
-  press_enter()
-  lesson_id = args[0]
-  process_toc(lesson_id)
+  if args[0] == "toc"
+    print_toc
+  else
+    print_welcome()
+    press_enter()
+    lesson_id = args[0]
+    process_toc(lesson_id)
+  end
 end
 ########################################################
 main(ARGV)
