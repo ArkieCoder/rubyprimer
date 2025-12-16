@@ -54,20 +54,20 @@ def print_example(example, test=false, example_id=nil)
   ans = get_input("Type 'edit' to edit the code in vim, or type 'run' to run the code: ")
   if ans.downcase == "edit"
     puts "Editing code ..."
-	edited_code = edit_code(example)
-	print_example(edited_code, test, example_id)
+    edited_code = edit_code(example)
+    print_example(edited_code, test, example_id)
   elsif ans.downcase == "run"
     puts "Running code ..."
-	if test
-        test_code(example, example_id)
+    if test
+      test_code(example, example_id)
     else	    
-	    run_code(example)
-	end
+      run_code(example)
+    end
   else
     puts ""
     puts "         ERROR: I'm not sure what you mean by '#{ans}' ... please try again".red
-	puts ""
-	print_example(example, test, example_id)
+    puts ""
+    print_example(example, test, example_id)
   end
 end
 
@@ -134,14 +134,14 @@ def test_code(code, example_id)
 
   should_rerun = false
   if status == 0
-	    puts ""
+    puts ""
     puts "---> SUCCESS:  #{Sayings.get_saying('happy')}".bold.light_yellow
-	    puts ""
+    puts ""
   else
-	    puts ""
+    puts ""
     puts "---> WHOOPS:  #{Sayings.get_saying('sad')}".bold.light_red
-	    puts ""
-	    should_rerun = true
+    puts ""
+    should_rerun = true
   end
   decorate_output("bottom")
 
@@ -167,12 +167,12 @@ def process_toc(lesson_id=nil)
 
   toc['lessons'].each do |lesson_file|
     if lesson_id 
-        if lesson_file == "#{lesson_id}.json"
-            print_paragraph("\n\nSkipping to lesson: #{lesson_id}!")
-            process_lesson("lessons/#{lesson_id}.json")
-        end
+      if lesson_file == "#{lesson_id}.json"
+        print_paragraph("\n\nSkipping to lesson: #{lesson_id}!")
+        process_lesson("lessons/#{lesson_id}.json")
+      end
     else
-        process_lesson("lessons/#{lesson_file}")
+      process_lesson("lessons/#{lesson_file}")
     end
   end
 end
@@ -182,17 +182,17 @@ def process_lesson(lesson_file)
   lesson['subsections'].each do |subsection|
     print_header(subsection['name'])
     subsection['items'].each do |item|
-        case item['type']
-            when "press_enter"
-                press_enter()
-	            when "paragraph"
-                print_paragraph(item['value'])
-	            when "example"
-                print_example(get_example(item['value']))
-	            when "test_example"
-                print_example(get_example(item['value']), true, item['value'])
-        end
-	    end
+      case item['type']
+        when "press_enter"
+          press_enter()
+	when "paragraph"
+          print_paragraph(item['value'])
+	when "example"
+          print_example(get_example(item['value']))
+	when "test_example"
+          print_example(get_example(item['value']), true, item['value'])
+      end
+    end
   end
 end
 
