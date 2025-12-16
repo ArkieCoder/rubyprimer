@@ -40,6 +40,51 @@
           "value": "Let us move on ..."
         }
       ]
+    },
+    {
+      "name": "Search in A String",
+      "items": [
+        {
+          "type": "header",
+          "value": "Search in A String"
+        },
+        {
+          "type": "paragraph",
+          "value": "Another common scenario is checking if a String contains any given character, word or sub-string. Considering your experience with the Ruby API and its intuitiveness, try and check whether the `String` given below includes `Yoda`."
+        },
+        {
+          "type": "test_example",
+          "value": "1.1.2"
+        },
+        {
+          "type": "paragraph",
+          "value": "Did you manage to figure that out by yourself? Too many cooks spoil the broth while too many hints lead the hunter astray! Now check if the string below starts with `Ruby`."
+        },
+        {
+          "type": "test_example",
+          "value": "1.1.3"
+        },
+        {
+          "type": "paragraph",
+          "value": "After that, checking whether the statement below ends with `Ruby` should be easy."
+        },
+        {
+          "type": "test_example",
+          "value": "1.1.4"
+        },
+        {
+          "type": "paragraph",
+          "value": "Are you getting the hang of the Ruby API? The previous three methods all ended with a `?`. It is conventional in Ruby to have `?` at the end of the method if that method returns only boolean values. Though it is not mandated by the syntax, this practice is highly recommended as it increases the readability of code."
+        },
+        {
+          "type": "paragraph",
+          "value": "Sometimes we will be required to know the index of a particular character or a sub-string in a given `String` and conveniently Ruby provides a method on `String` that does exactly that. Try and find out the index of `R` in the string below:"
+        },
+        {
+          "type": "test_example",
+          "value": "1.1.5"
+        }
+      ]
     }
   ]
 }
