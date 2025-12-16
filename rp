@@ -175,6 +175,7 @@ def print_toc
   width = 10 + max_name_length
   puts ""
   puts "Table of Contents".center(width).bold.underline
+  puts ""
   toc['lessons'].each do |lesson|
     id = lesson.sub('.json', '')
     puts "    • #{id}"

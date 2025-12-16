@@ -1,0 +1,1 @@
+puts 'RubyMonk Is Pretty Brilliant'.match(/ ./)
