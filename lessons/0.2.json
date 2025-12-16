@@ -1,69 +1,73 @@
 {
-    "subsections": [{
-        "name": "Syntactic Sugar for Special Methods",
-        "items": [{
-            "type": "paragraph",
-            "value": "As an observant initiate, you've probably noticed that in the last lesson, `Integer` objects list mathematical operators like `+` and `-` amont their methods.  You probably also thought to yourself that invoking the `+` method like so - `1.+(2)` - to add two numbers would be ... clumsy."
+  "subsections": [
+    {
+      "name": "Syntactic Sugar for Special Methods",
+      "items": [
+        {
+          "type": "paragraph",
+          "value": "As an observant initiate, you've probably noticed that in the last lesson, `Integer` objects list mathematical operators like `+` and `-` amont their methods.  You probably also thought to yourself that invoking the `+` method like so - `1.+(2)` - to add two numbers would be ... clumsy."
         },
         {
-            "type": "paragraph",
-            "value": "It is, though it works just fine - try for yourself by adding `4` to `3` in the exercise below."
+          "type": "paragraph",
+          "value": "It is, though it works just fine - try for yourself by adding `4` to `3` in the exercise below."
         },
         {
-            "type": "test_example",
-            "value": "0.2.1"
+          "type": "test_example",
+          "value": "0.2.1"
         },
         {
-            "type": "press_enter"
+          "type": "press_enter"
         },
         {
-            "type": "paragraph",
-            "value": "Ruby as a language aims to be extremely programmer-friendly, so you can usually safely assume that there is a better way.  Ruby makes an exception in its syntactic rules for commonly used operators so you don't have to use periods to invoke them on object."
+          "type": "paragraph",
+          "value": "Ruby as a language aims to be extremely programmer-friendly, so you can usually safely assume that there is a better way.  Ruby makes an exception in its syntactic rules for commonly used operators so you don't have to use periods to invoke them on object."
         },
         {
-            "type": "paragraph",
-            "value": "Let us rephrase the previous example in a more natural syntax by omitting the periods and brackets."
+          "type": "paragraph",
+          "value": "Let us rephrase the previous example in a more natural syntax by omitting the periods and brackets."
         },
         {
-            "type": "example",
-            "value": "0.2.2"
+          "type": "example",
+          "value": "0.2.2"
         },
         {
-            "type": "press_enter"
+          "type": "press_enter"
         },
         {
-            "type": "paragraph",
-            "value": "There are several other method names that have this special status - here's a quick summary of the ones you're most likely to run into."
+          "type": "paragraph",
+          "value": "There are several other method names that have this special status - here's a quick summary of the ones you're most likely to run into."
         },
         {
-            "type": "paragraph",
-            "value": " `+`  `-`  `*`  `/`  `=`  `==`  `!=`  `>`  `<`  `>=`  `<=`  `[]`"
+          "type": "paragraph",
+          "value": " `+`  `-`  `*`  `/`  `=`  `==`  `!=`  `>`  `<`  `>=`  `<=`  `[]`"
         },
         {
-            "type": "paragraph",
-            "value": "This last method (`[]`) you've probably already seen in the lesson that covers Arrays, and is arguably the most unique in its syntax.  Not only does it not require a period, it also encloses the arguments to itself.  Here's a quick example to refresh your memory."
+          "type": "paragraph",
+          "value": "This last method (`[]`) you've probably already seen in the lesson that covers Arrays, and is arguably the most unique in its syntax.  Not only does it not require a period, it also encloses the arguments to itself.  Here's a quick example to refresh your memory."
         },
         {
-            "type": "example",
-            "value": "0.2.3"
+          "type": "example",
+          "value": "0.2.3"
         },
         {
-            "type": "paragraph",
-            "value": "Even more interesting is that it still works if you use the more traditional method syntax - see for yourself by running the example below."
+          "type": "paragraph",
+          "value": "Even more interesting is that it still works if you use the more traditional method syntax - see for yourself by running the example below."
         },
         {
-            "type": "example",
-            "value": "0.2.4"
+          "type": "example",
+          "value": "0.2.4"
         },
         {
-            "type": "press_enter"
+          "type": "press_enter"
         },
         {
-            "type": "paragraph",
-            "value": "This is a common pattern in Ruby - two different ways to do the same thing where one remains consistent and the other changes the syntax to be more programmer friendly."
+          "type": "paragraph",
+          "value": "This is a common pattern in Ruby - two different ways to do the same thing where one remains consistent and the other changes the syntax to be more programmer friendly."
         },
         {
-            "type": "press_enter"
-        }]
-    }]
+          "type": "press_enter"
+        }
+      ]
+    }
+  ]
 }

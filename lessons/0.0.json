@@ -1,73 +1,78 @@
 {
-    "subsections": [{
-        "name": "Everything is an object",
-        "items": [{
-            "type": "paragraph",
-            "value": "We will begin our journey with objects."
+  "subsections": [
+    {
+      "name": "Everything is an object",
+      "items": [
+        {
+          "type": "paragraph",
+          "value": "We will begin our journey with objects."
         },
         {
-            "type": "paragraph",
-            "value": "In Ruby, just like in real life, our world is filled with objects.  Everything is an object - integers, characters, text, arrays - everything."
+          "type": "paragraph",
+          "value": "In Ruby, just like in real life, our world is filled with objects.  Everything is an object - integers, characters, text, arrays - everything."
         },
         {
-            "type": "paragraph",
-            "value": "To make things happen using Ruby, one always puts oneself in the place of an object and then has conversations with other objects, telling them to do stuff."
+          "type": "paragraph",
+          "value": "To make things happen using Ruby, one always puts oneself in the place of an object and then has conversations with other objects, telling them to do stuff."
         },
         {
-            "type": "paragraph",
-            "value": "Roleplaying as an object in your program is an integral part of object-oriented programming.  To know which object you are at the moment, one may use the keyword `self`."
+          "type": "paragraph",
+          "value": "Roleplaying as an object in your program is an integral part of object-oriented programming.  To know which object you are at the moment, one may use the keyword `self`."
         },
         {
-            "type": "example",
-            "value": "0.0.0"
+          "type": "example",
+          "value": "0.0.0"
         },
         {
-            "type": "press_enter"
+          "type": "press_enter"
         },
         {
-            "type": "paragraph",
-            "value": "As you can see, if you don't specify which object you are, you automatically play the role of the `main` object that Ruby provides us by default."
+          "type": "paragraph",
+          "value": "As you can see, if you don't specify which object you are, you automatically play the role of the `main` object that Ruby provides us by default."
         },
         {
-            "type": "paragraph",
-            "value": "We'll delve into how one can play the role of different objects and why this is useful a little further down the line."
+          "type": "paragraph",
+          "value": "We'll delve into how one can play the role of different objects and why this is useful a little further down the line."
         },
         {
-            "type": "press_enter"
-        }]
+          "type": "press_enter"
+        }
+      ]
     },
     {
-        "name": "Talking to objects",
-        "items": [{
-            "type": "paragraph",
-            "value": "One object interacts with another by using what are called 'methods'.  More specifically, one object 'calls' or 'invokes the methods' of another object."
+      "name": "Talking to objects",
+      "items": [
+        {
+          "type": "paragraph",
+          "value": "One object interacts with another by using what are called 'methods'.  More specifically, one object 'calls' or 'invokes the methods' of another object."
         },
         {
-            "type": "paragraph",
-            "value": "In the example below, we call the method `even?` on the object that is the number `2` by placing a period (`.`) after the object, then adding in the name of the method we want to invoke."
+          "type": "paragraph",
+          "value": "In the example below, we call the method `even?` on the object that is the number `2` by placing a period (`.`) after the object, then adding in the name of the method we want to invoke."
         },
         {
-            "type": "example",
-            "value": "0.0.1"
+          "type": "example",
+          "value": "0.0.1"
         },
         {
-            "type": "press_enter"
+          "type": "press_enter"
         },
         {
-            "type": "paragraph",
-            "value": "Invoking a method on an object inevitably generates a response.  This response is always another object. Calling the method `next` on the object `1` has it give us the next consecutive value, `2`."
+          "type": "paragraph",
+          "value": "Invoking a method on an object inevitably generates a response.  This response is always another object. Calling the method `next` on the object `1` has it give us the next consecutive value, `2`."
         },
         {
-            "type": "paragraph",
-            "value": "One may also chain method invocations by simply adding more periods and method names sequentially - each method in the chain is called on the result of the previous method.  Go on and try it by invoking `next` twice on `1` to get `3`."
+          "type": "paragraph",
+          "value": "One may also chain method invocations by simply adding more periods and method names sequentially - each method in the chain is called on the result of the previous method.  Go on and try it by invoking `next` twice on `1` to get `3`."
         },
         {
-            "type": "test_example",
-            "value": "0.0.2"
+          "type": "test_example",
+          "value": "0.0.2"
         },
         {
-            "type": "press_enter"
-        }]
-    }]
+          "type": "press_enter"
+        }
+      ]
+    }
+  ]
 }
-

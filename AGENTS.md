@@ -9,7 +9,7 @@
 
 ### Code Style
 
-- **Formatting**: Use 4-space indentation.
+- **Formatting**: Use 2-space indentation.
 - **Naming**: Use `snake_case` for variables and methods.
 - **Strings**: Use double quotes for strings, especially with interpolation. Use single quotes for `require` statements.
 - **Methods**: Use parentheses for method definitions with arguments.

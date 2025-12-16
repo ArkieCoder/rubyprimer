@@ -1,68 +1,74 @@
 {
-    "subsections": [{
-        "name": "Looking up methods",
-        "items": [{
-            "type": "header",
-            "value": "Looking up methods"
+  "subsections": [
+    {
+      "name": "Looking up methods",
+      "items": [
+        {
+          "type": "header",
+          "value": "Looking up methods"
         },
         {
-            "type": "paragraph",
-            "value": "Ruby objects are happy to tell you what methods they provide.  You simply call the `methods` method on them."
+          "type": "paragraph",
+          "value": "Ruby objects are happy to tell you what methods they provide.  You simply call the `methods` method on them."
         },
         {
-            "type": "example",
-            "value": "0.1.1"
-        }, 
-        {
-            "type": "press_enter"
+          "type": "example",
+          "value": "0.1.1"
         },
         {
-            "type": "paragraph",
-            "value": "As you can see, you get a listing of all the methods on the number `1` that you could invoke.  The names are prefixed with a colon (`:`) that you can safely ignore for now.  If you find the results too muddled, you can easily sort them alphabetically.  Try it for yourself - simply call the method `sort` on the result of `methods`:"
+          "type": "press_enter"
         },
         {
-            "type": "test_example",
-            "value": "0.1.2"
+          "type": "paragraph",
+          "value": "As you can see, you get a listing of all the methods on the number `1` that you could invoke.  The names are prefixed with a colon (`:`) that you can safely ignore for now.  If you find the results too muddled, you can easily sort them alphabetically.  Try it for yourself - simply call the method `sort` on the result of `methods`:"
         },
         {
-            "type": "press_enter"
-        }]
+          "type": "test_example",
+          "value": "0.1.2"
+        },
+        {
+          "type": "press_enter"
+        }
+      ]
     },
     {
-        "name": "Invoking methods with arguments",
-        "items": [{
-            "type": "paragraph",
-            "value": "When talking to an object via its methods, it is possible to give it additional information so it can give you an appropriate response."
+      "name": "Invoking methods with arguments",
+      "items": [
+        {
+          "type": "paragraph",
+          "value": "When talking to an object via its methods, it is possible to give it additional information so it can give you an appropriate response."
         },
         {
-            "type": "paragraph",
-            "value": "This additional information is called the 'arguments to a method'. The name 'argument' makes sense if you stop to think about the fact that methods are the paths of communication between objects."
+          "type": "paragraph",
+          "value": "This additional information is called the 'arguments to a method'. The name 'argument' makes sense if you stop to think about the fact that methods are the paths of communication between objects."
         },
         {
-            "type": "paragraph",
-            "value": "Here's an example of an argument to the method `index`, which finds the position of the argument in the array:"
+          "type": "paragraph",
+          "value": "Here's an example of an argument to the method `index`, which finds the position of the argument in the array:"
         },
         {
-            "type": "example",
-            "value": "0.1.3"
+          "type": "example",
+          "value": "0.1.3"
         },
         {
-            "type": "press_enter"
+          "type": "press_enter"
         },
         {
-            "type": "paragraph",
-            "value": "Here, `index` is the method and `paper` the argument.  If there is more than one argument, they can be passed to the method by simply separating them with commas."
+          "type": "paragraph",
+          "value": "Here, `index` is the method and `paper` the argument.  If there is more than one argument, they can be passed to the method by simply separating them with commas."
         },
         {
-            "type": "paragraph",
-            "value": "Try using a method that takes two arguments - use the `between?` method to determine if the number `2` lies between the numbers `1` and `3`."
+          "type": "paragraph",
+          "value": "Try using a method that takes two arguments - use the `between?` method to determine if the number `2` lies between the numbers `1` and `3`."
         },
         {
-            "type": "test_example",
-            "value": "0.1.4"
+          "type": "test_example",
+          "value": "0.1.4"
         },
         {
-            "type": "press_enter"
-        }]
-    }]
+          "type": "press_enter"
+        }
+      ]
+    }
+  ]
 }
