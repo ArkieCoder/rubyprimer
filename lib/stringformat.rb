@@ -1,5 +1,5 @@
 class String
-  def format()
+  def format(color: 'white')
     require 'tempfile'
     require 'base64'
 
@@ -9,7 +9,6 @@ class String
 
     commonmark_content = <<~CMARK
     ---
-    fontcolor: white
     documentclass: standalone
     classoption: preview
     header-includes:
@@ -22,7 +21,7 @@ class String
     include-before:
     - |
       ```{=latex}
-      \\color{white}
+      \\color{#{color}}
       \\Large
       ```
     ...
