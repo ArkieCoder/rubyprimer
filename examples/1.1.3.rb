@@ -1,0 +1,1 @@
+puts "Ruby is a beautiful language"

@@ -27,10 +27,10 @@
           "type": "test_example",
           "value": "1.1.1"
         },
-	{
+        {
           "type": "paragraph",
-	  "value": "We've been using double quotes in all our string interpolation examples. A `String` literal created with single quotes does _not_ support interpolation."
-	},
+          "value": "We've been using double quotes in all our string interpolation examples. A `String` literal created with single quotes does _not_ support interpolation."
+        },
         {
           "type": "paragraph",
           "value": "The essential difference between using single or double quotes is that double quotes allow for escape sequences while single quotes do not. What you saw above is one such example. `\"\\n\"` is interpreted as a new line and appears as a new line when rendered to the user, whereas `'\\n'` displays the actual escape sequence to the user."
@@ -83,6 +83,39 @@
         {
           "type": "test_example",
           "value": "1.1.5"
+        }
+      ]
+    },
+    {
+      "name": "String Case Change",
+      "items": [
+        {
+          "type": "header",
+          "value": "String Case Change"
+        },
+        {
+          "type": "paragraph",
+          "value": "The last thing we will look into in this lesson is manipulating the case of strings. Ruby provides us with a convenient tool-set to take care of proper and consistent casing within strings. Let's start with converting a string in lower case to upper case."
+        },
+        {
+          "type": "example",
+          "value": "1.1.6"
+        },
+        {
+          "type": "paragraph",
+          "value": "Similarly, one can convert a string to lower case as well. Ruby calls this method `downcase`. Convert the string below into lower case."
+        },
+        {
+          "type": "test_example",
+          "value": "1.1.7"
+        },
+        {
+          "type": "paragraph",
+          "value": "On a parting note, let us touch on an interesting method. When you encounter a mixed cased string, Ruby provides a way to swap the case of every character in it i.e. this method would convert `\"I Am MixEd\"` to `\"i aM mIXeD\"`. Try to figure this method out and tell us if you ever come across a scenario where you find use for this. It might make a good story for a rainy night!"
+        },
+        {
+          "type": "test_example",
+          "value": "1.1.8"
         }
       ]
     }
