@@ -1,0 +1,19 @@
+name: Ruby Syntax Check
+
+on:
+  pull_request:
+    paths:
+      - '**/*.rb'
+
+jobs:
+  ruby-syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+      - name: Check Ruby syntax
+        run: |
+          find . -name '*.rb' -exec ruby -c {} \;

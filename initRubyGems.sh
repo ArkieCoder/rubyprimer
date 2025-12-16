@@ -1,3 +1,3 @@
 #!/bin/sh
 
-bundle install --path vendor/bundle
+/opt/homebrew/opt/ruby@3.2/bin/bundle install --path vendor/bundle
