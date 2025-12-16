@@ -60,7 +60,8 @@ def print_paragraph(para, mod=nil)
 end
 
 def print_example(example, test=false, example_id=nil) 
-  print_paragraph("Example Code:", "underline")
+  puts ">>> Example Code <<<".underline.grey
+  puts ""
   print_paragraph(example, "green")
   ans = get_input("Type 'edit' to edit the code in vim, or type 'run' to run the code: ")
   if ans.downcase == "edit"
