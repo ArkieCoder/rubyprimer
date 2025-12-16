@@ -1,0 +1,45 @@
+{
+  "subsections": [
+    {
+      "name": "String Basics",
+      "items": [
+        {
+          "type": "header",
+          "value": "String Interpolation"
+        },
+        {
+          "type": "paragraph",
+          "value": "It is essential to be able to replace placeholders within a string with values they represent. In the programming paradigm, this is called \"string interpolation\". In Ruby, string interpolation is extremely easy. Feel free to run the example below to see the sample in action."
+        },
+        {
+          "type": "example",
+          "value": "1.1.0"
+        },
+        {
+          "type": "paragraph",
+          "value": "Do remember that placeholders aren't just variables. Any valid block of Ruby code you place inside `#{}` will be evaluated and inserted at that location. Isn't that very neat?"
+        },
+        {
+          "type": "paragraph",
+          "value": "Now let us see you wield this tool. Complete the functionality of the method below which, given a `String` as the argument, inserts the length of that `String` into another `String`:"
+        },
+        {
+          "type": "test_example",
+          "value": "1.1.1"
+        },
+	{
+          "type": "paragraph",
+	  "value": "We've been using double quotes in all our string interpolation examples. A `String` literal created with single quotes does _not_ support interpolation."
+	},
+        {
+          "type": "paragraph",
+          "value": "The essential difference between using single or double quotes is that double quotes allow for escape sequences while single quotes do not. What you saw above is one such example. `\"\\n\"` is interpreted as a new line and appears as a new line when rendered to the user, whereas `'\\n'` displays the actual escape sequence to the user."
+        },
+        {
+          "type": "paragraph",
+          "value": "Let us move on ..."
+        }
+      ]
+    }
+  ]
+}
