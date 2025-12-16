@@ -23,10 +23,9 @@ end
 def print_welcome()
   message = <<-WELCOME
 Welcome to the Ruby Primer.  This is a console version of the Ruby Primer
-found at http://rubymonk.com/learning/books/1-ruby-primer, maintained
-by C42 Engineering.  This is a program written in ruby that runs actual
-ruby code snippets in the ruby interpreter on your system.  It is intended
-to be interactive, fun, and educational.  Enjoy!
+previously found at http://rubymonk.com/. This is a program written in `ruby`
+that runs actual `ruby` code snippets in the `ruby` interpreter on your system.
+It is intended to be interactive, fun, and educational.  Enjoy!
   WELCOME
   puts "\n#{message.format(color:'yellow')}\n\n"
 end
