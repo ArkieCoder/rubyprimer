@@ -1,12 +1,10 @@
 {
+  "number": "1.1",
+  "name": "String Basics",
   "subsections": [
     {
-      "name": "String Basics",
+      "name": "String Interpolation",
       "items": [
-        {
-          "type": "header",
-          "value": "String Interpolation"
-        },
         {
           "type": "paragraph",
           "value": "It is essential to be able to replace placeholders within a string with values they represent. In the programming paradigm, this is called \"string interpolation\". In Ruby, string interpolation is extremely easy. Feel free to run the example below to see the sample in action."

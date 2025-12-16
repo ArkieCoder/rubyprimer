@@ -1,7 +1,9 @@
 {
+  "number": "0.2",
+  "name": "Syntactic Sugar for Special Methods",
   "subsections": [
     {
-      "name": "Syntactic Sugar for Special Methods",
+      "name": "Special Methods",
       "items": [
         {
           "type": "paragraph",

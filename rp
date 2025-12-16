@@ -13,11 +13,23 @@ load 'lib/sayings.rb'
 
 def print_header(header)
   puts ""
-  puts "==========================="
   figlet = RubyFiglet::Figlet.new(header, 'standard')
-  puts figlet.to_s.magenta
-  puts "==========================="
+  figlet_text = figlet.to_s
+  max_width = figlet_text.lines.map(&:length).max
+  border = "=" * max_width
+  puts border
+  puts figlet_text.magenta
+  puts border
   puts ""
+end
+
+def print_subheader(header)
+  puts header.underline
+end
+
+def print_lesson_name(lesson_name)
+  figlet = RubyFiglet::Figlet.new(lesson_name, 'thin')
+  puts figlet.to_s.cyan
 end
 
 def print_welcome()
@@ -156,6 +168,7 @@ end
 
 def press_enter()
   get_input("Press ENTER to continue")
+  puts ""
 end
 
 def read_json_file(file_name)
@@ -212,15 +225,23 @@ end
 
 def process_lesson(lesson_file, start_sub = 0)
   lesson = read_json_file(lesson_file)
+  if lesson['number']
+    print_lesson_name("Lesson #{lesson['number']}")
+  end
+  if lesson['name']
+    print_header(lesson['name'])
+  end
   lesson['subsections'].each_with_index do |subsection, i|
     next if i < start_sub
-    print_header(subsection['name'])
+    print_subheader(subsection['name'])
     subsection['items'].each do |item|
       case item['type']
         when "press_enter"
           press_enter()
 	when "paragraph"
           print_paragraph(item['value'])
+	when "subheader"
+          print_subheader(item['value'])
 	when "example"
           print_example(get_example(item['value']))
 	when "test_example"
