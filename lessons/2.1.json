@@ -1,0 +1,73 @@
+{
+  "number": "2.1",
+  "name": "The if..else Construct",
+  "subsections": [
+    {
+      "name": "Ruby Conditional Branching : The 'if' Statement",
+      "items": [
+        {
+          "type": "paragraph",
+          "value": "You can use Ruby's Boolean Expressions to specifiy conditions using the usual `if..else` construct. Let us take a look at a simple example:"
+        },
+        {
+          "type": "example",
+          "value": "2.1.0"
+        },
+        {
+          "type": "paragraph",
+          "value": "When you run the above example, it will tell you that `0 is negative`. But we know that zero is neither positive nor negative. How do we fix this program so that zero is treated separately?"
+        },
+        {
+          "type": "paragraph",
+          "value": "Ruby gives you the `elsif` keyword that helps you check for multiple possibilities inside an `if..else` construct. Try using `elsif` to fix the code below so that when the number is zero, it just prints `0`."
+        },
+        {
+          "type": "test_example",
+          "value": "2.1.1"
+        },
+        {
+          "type": "paragraph",
+          "value": "Ruby also has an `unless` keyword that can be used in places where you want to check for a negative condition. `unless x` is equivalent to `if !x`. Here is an example:"
+        },
+        {
+          "type": "example",
+          "value": "2.1.2"
+        }
+      ]
+    },
+    {
+      "name": "The Ternary Operator",
+      "items": [
+        {
+          "type": "paragraph",
+          "value": "In English, \"ternary\" is an adjective meaning \"composed of three items.\" In a programming language, a ternary operator is simply short-hand for an `if`-`then`-`else` construct."
+        },
+        {
+          "type": "paragraph",
+          "value": "In Ruby, `?` and `:` can be used to mean `then` and `else` respectively. Here's the first example in this lesson re-written using a ternary operator."
+        },
+        {
+          "type": "example",
+          "value": "2.1.3"
+        }
+      ]
+    },
+    {
+      "name": "Truthiness of Objects in Ruby",
+      "items": [
+        {
+          "type": "paragraph",
+          "value": "The conditional statements `if` and `unless` can also use expressions that return an object that is not either `true` or `false`."
+        },
+        {
+          "type": "paragraph",
+          "value": "In such cases, the objects `false` and `nil` equate to `false`. Every other object like, say, `1`, `0`, `\"\"` are all evaluated to be `true`. Here is a demonstration:"
+        },
+        {
+          "type": "example",
+          "value": "2.1.4"
+        }
+      ]
+    }
+  ]
+}
