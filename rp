@@ -60,7 +60,7 @@ def print_paragraph(para, mod=nil)
 end
 
 def print_example(example, test=false, example_id=nil) 
-  puts ">>> Example Code <<<".underline.grey
+  puts ">>> Example #{example_id} <<<".underline.grey
   puts ""
   print_paragraph(example, "green")
   ans = get_input("Type 'edit' to edit the code in vim, or type 'run' to run the code: ")
@@ -179,29 +179,20 @@ end
 
 def print_toc
   toc = read_json_file('lessons/toc.json')
-  max_name_length = 0
-  toc['lessons'].each do |lesson|
-    lesson_data = read_json_file("lessons/#{lesson}")
-    lesson_data['subsections'].each do |sub|
-      max_name_length = [max_name_length, sub['name'].length].max
-    end
-  end
-  width = 10 + max_name_length
-  puts ""
-  puts "Table of Contents".center(width).bold.underline
-  puts ""
+  entries = []
   toc['lessons'].each do |lesson|
     id = lesson.sub('.json', '')
-    puts "    • #{id}"
     lesson_data = read_json_file("lessons/#{lesson}")
-    lesson_data['subsections'].each do |sub|
-      puts "      ◦ #{sub['name']}"
-    end
+    name = lesson_data['name'] || id
+    entries << "#{id}: #{name}"
   end
-  puts (" " * width).bold.underline
+  max_entry_length = entries.map(&:length).max || 0
+  width = 8 + max_entry_length
   puts ""
-  puts "  To begin learning with a specific lesson (such as 0.0), run: #{$0} 0.0"
-  puts "  To start at a specific subsection (such as 0.0.1), run: #{$0} 0.0.1"
+  puts "Table of Contents".center(width).bold.underline
+  entries.each do |entry|
+    puts "    • #{entry}"
+  end
   puts ""
 end
 
@@ -244,7 +235,7 @@ def process_lesson(lesson_file, start_sub = 0)
 	when "subheader"
           print_subheader(item['value'])
 	when "example"
-          print_example(get_example(item['value']))
+          print_example(get_example(item['value']), false, item['value'])
 	when "test_example"
           print_example(get_example(item['value']), true, item['value'])
       end

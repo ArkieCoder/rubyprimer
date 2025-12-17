@@ -1,0 +1,48 @@
+{
+  "number": "3.1",
+  "name": "Basic Array Operations",
+  "subsections": [
+    {
+      "name": "Transforming Arrays",
+      "items": [
+        {
+          "type": "paragraph",
+          "value": "Now on to more interesting things, but with a little tip from me first. Try running this:"
+        },
+        {
+          "type": "example",
+          "value": "3.1.0"
+        },
+        {
+          "type": "paragraph",
+          "value": "You'll notice that the output, `[2, 3, 4, 5, 6]` is the result of applying the code inside the curly brace to every single element in the array. The result is an entirely new array containing the results. In Ruby, the method `map` is used to transform the contents of an array according to a specified set of rules defined inside the code block. Go on, you try it. Multiply every element in the array below by 3 to get `[3, 6 .. 15]`."
+        },
+        {
+          "type": "test_example",
+          "value": "3.1.1"
+        }
+      ]
+    },
+    {
+      "name": "Filtering Elements of An Array",
+      "items": [
+        {
+          "type": "paragraph",
+          "value": "Filtering elements in a collection according to a boolean expression is a very common operation in day-to-day programming. Ruby provides the rather handy `select` method to make this easy."
+        },
+        {
+          "type": "example",
+          "value": "3.1.2"
+        },
+        {
+          "type": "paragraph",
+          "value": "The method `select` is the standard Ruby idiom for filtering elements. In the following code, try extracting the strings that are longer than five characters."
+        },
+        {
+          "type": "test_example",
+          "value": "3.1.3"
+        }
+      ]
+    }
+  ]
+}
