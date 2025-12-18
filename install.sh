@@ -54,7 +54,7 @@ detect_ruby() {
     local ruby_paths=("/usr/bin/ruby" "/usr/bin/ruby$REQUIRED_RUBY_VERSION" "/usr/local/bin/ruby" "/opt/homebrew/bin/ruby" "/opt/homebrew/opt/ruby@$REQUIRED_RUBY_VERSION/bin/ruby")
     for path in "${ruby_paths[@]}"; do
         if [ -x "$path" ]; then
-            local version=$("$path" --version 2>/dev/null | grep -oE '[0-9]+\.[0-9]+' | head -1)
+            local version=$( { "$path" --version 2>/dev/null || echo "ruby 0.0.0"; } | grep -oE '[0-9]+\.[0-9]+' | head -1 )
             if [ "$(printf '%s\n' "$REQUIRED_RUBY_VERSION" "$version" | sort -V | head -1)" = "$REQUIRED_RUBY_VERSION" ]; then
                 echo "$path"
                 return 0
