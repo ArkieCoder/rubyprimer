@@ -87,8 +87,12 @@ fi
 echo "Detected Ruby: $RUBY_PATH"
 
 # Update rp shebang
-sed -i.bak "1s|.*|#!/$RUBY_PATH|" rp
-echo "Updated rp shebang to use $RUBY_PATH"
+if [ -w rp ]; then
+    sed -i.bak "1s|.*|#!/$RUBY_PATH|" rp
+    echo "Updated rp shebang to use $RUBY_PATH"
+else
+    echo "Warning: Could not update rp shebang (file not writable)"
+fi
 
 # Install gems
 echo "Installing Ruby gems..."
