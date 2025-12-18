@@ -150,7 +150,7 @@ check_font() {
             fi
             ;;
         *)
-            return 1
+return 0
             ;;
     esac
 }
