@@ -2,9 +2,6 @@ name: Ruby Syntax Check
 
 on:
   pull_request:
-    paths:
-      - '**/*.rb'
-
 jobs:
   ruby-syntax:
     runs-on: ubuntu-latest
@@ -16,4 +13,4 @@ jobs:
           ruby-version: '3.2'
       - name: Check Ruby syntax
         run: |
-          find . -name '*.rb' -exec ruby -c {} \;
+          find . \( -name '*.rb' -o -name 'rp' \) -exec ruby -c {} \;
