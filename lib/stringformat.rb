@@ -50,7 +50,7 @@ class String
       if kitty?
         # Convert PDF to PNG for Kitty
         png_file = tmp_file.path.sub('.md', '.png')
-        system("convert -density 300 #{pdf_file} #{png_file} >/dev/null 2>&1")
+        system("convert -density 600 #{pdf_file} #{png_file} >/dev/null 2>&1")
         if File.exist?(png_file)
           png_data = File.read(png_file)
           base64_data = Base64.strict_encode64(png_data)
