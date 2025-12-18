@@ -1,12 +1,10 @@
 {
+  "number": "1.0",
+  "name": "Introduction to Strings",
   "subsections": [
     {
-      "name": "Introduction to Strings",
+      "name": "String Construction",
       "items": [
-        {
-          "type": "paragraph",
-          "value": "String construction"
-        },
         {
           "type": "paragraph",
           "value": "In doing lies the true path, so let us begin by doing. Type `edit` and then type `\"RubyMonk\"` in the editor (remember to include the double quotes)."
@@ -22,11 +20,12 @@
         {
           "type": "paragraph",
           "value": "Strings are key to communicating with a user and programming apprentices will encounter and start manipulating strings from the earliest stages of their journey. In this lesson, we will explore some of the tools Ruby provides to create and manipulate strings."
-        },
-        {
-          "type": "paragraph",
-          "value": "Literal forms"
-        },
+        }
+      ]
+    },
+    {
+      "name": "Literal Forms",
+      "items": [
         {
           "type": "paragraph",
           "value": "String construction has what is known as a literal form - the interpreter treats anything surrounded with single quotes (`'`) or double quotes(`\"`) as a string. In other words, both `'RubyMonk'` and `\"RubyMonk\"` will create instances of strings."
@@ -54,7 +53,12 @@
         {
           "type": "paragraph",
           "value": "All Strings are instances of the Ruby `String` class which provides a number of methods to manipulate the string. Now that you have successfully mastered creating strings let's take a look at some of the most commonly used methods."
-        },
+        }
+      ]
+    },
+    { 
+      "name": "String Length",
+      "items": [
         {
           "type": "paragraph",
           "value": "String Length"

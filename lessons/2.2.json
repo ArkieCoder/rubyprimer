@@ -1,0 +1,71 @@
+{
+  "number": "2.2",
+  "name": "Loops in Ruby",
+  "subsections": [
+    {
+      "name": "Loops in Ruby",
+      "items": [
+        {
+          "type": "paragraph",
+          "value": "Loops are programming constructs that help you repeat an action an arbitrary number of times."
+        },
+        {
+          "type": "paragraph",
+          "value": "The methods `Array#each`, `Array#select`, etc. are the most frequently used loops since the primary use of loops is to iterate over or transform a collection, something that we'll learn in the chapter on \"Arrays in Ruby.\""
+        },
+        {
+          "type": "paragraph",
+          "value": "Here we will cover two basic looping constructs you can use to solve most other looping requirements that may come up."
+        },
+        {
+          "type": "subheader",
+          "value": "Infinite Loops"
+        },
+        {
+          "type": "paragraph",
+          "value": "Infinite loops keep running till you explicitly ask them to stop. They are syntactically the simplest to write. Here goes one:"
+        },
+        {
+          "type": "paragraph",
+          "value": "```\nloop do \n  puts \"this line will be executed for an infinite amount of time\" \nend\n```"
+        },
+        {
+          "type": "paragraph",
+          "value": "The example above does not have a termination condition and hence will run till the process is stopped. A loop can be halted from within using the `break` command."
+        },
+        {
+          "type": "paragraph",
+          "value": "Now write an infinite loop where the monk will meditate till he achieves Nirvana. Use the `break` statement once Nirvana is reached."
+        },
+        {
+          "type": "test_example",
+          "value": "2.2.0"
+        },
+        {
+          "type": "subheader",
+          "value": "Run A Block of Code N Times"
+        },
+        {
+          "type": "paragraph",
+          "value": "Say `N` is `5`, let us imagine how it might look."
+        },
+        {
+          "type": "paragraph",
+          "value": "```\n5.times do\n  # do the stuff that needs to be done\nend \n```"
+        },
+        {
+          "type": "paragraph",
+          "value": "Well, we imagined it right. It is that simple!"
+        },
+        {
+          "type": "test_example",
+          "value": "2.2.1"
+        },
+        {
+          "type": "paragraph",
+          "value": "We've only scratched the surface of the various ways in which Ruby lets you write loops. However, this should be enough for the most common use cases. Let us know if you need more!"
+        }
+      ]
+    }
+  ]
+}

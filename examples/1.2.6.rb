@@ -1,0 +1,1 @@
+puts 'RubyMonk'.gsub(/[aeiou]/,'1')

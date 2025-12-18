@@ -1,0 +1,1 @@
+puts "I can't work with any other language but Ruby"

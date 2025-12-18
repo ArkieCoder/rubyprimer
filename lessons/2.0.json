@@ -1,0 +1,71 @@
+{
+  "number": "2.0",
+  "name": "Boolean Expressions in Ruby",
+  "subsections": [
+    {
+      "name": "Beginner's Guide to Expressions in Ruby",
+      "items": [
+        {
+          "type": "paragraph",
+          "value": "Ruby uses the `==` operator for comparing two objects."
+        },
+        {
+          "type": "paragraph",
+          "value": "Let us try a simple exercise: write an expression that checks whether the value of the variable `name` is `\"Bob\"`:"
+        },
+        {
+          "type": "test_example",
+          "value": "2.0.0"
+        },
+        {
+          "type": "paragraph",
+          "value": "The other usual operators like greater than (`>`), less than (`<`), greater than or equal to (`>=`) etc. are supported. The next exercise is to write an expression that validates whether `age` is less than or equal to `35`."
+        },
+        {
+          "type": "test_example",
+          "value": "2.0.1"
+        },
+        {
+          "type": "paragraph",
+          "value": "Boolean expressions like the above always return either the `true` or `false` objects."
+        },
+        {
+          "type": "subheader",
+          "value": "Combining Expressions using the && and || operators"
+        },
+        {
+          "type": "paragraph",
+          "value": "You can use the keywords `||` (read as 'or'), `&&` (read as 'and') to combine expressions. Try modifying the following expression to check whether `age` is greater than or equal to `23` and the name is either `Bob` or `Jill`."
+        },
+        {
+          "type": "test_example",
+          "value": "2.0.2"
+        },
+        {
+          "type": "paragraph",
+          "value": "Just like the order of operations in mathematical expressions (PEMDAS anybody?), Ruby also has a set of laws governing the precedence of its various operators. However it is not something you need to be concerned about for now. Just make sure to use parentheses generously so that the order of operation is unambiguous to Ruby as well as for someone reading your code."
+        },
+        {
+          "type": "subheader",
+          "value": "Negating expressions"
+        },
+        {
+          "type": "paragraph",
+          "value": "Ruby lets you negate expressions using the `!` operator (read as 'not'). For instance, `!(name == 'Jill')` will return `false` if the name is `Jill` and `true` for any other name."
+        },
+        {
+          "type": "paragraph",
+          "value": "Now try writing a simple expression that accepts any `name` except `Bob`:"
+        },
+        {
+          "type": "test_example",
+          "value": "2.0.3"
+        },
+        {
+          "type": "paragraph",
+          "value": "Awesome! Now that you've learned the basics of writing boolean expressions in Ruby, let us see how we can use them to decide the flow of our application in the next lesson."
+        }
+      ]
+    }
+  ]
+}
