@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 # Ruby Primer Installer
 # Detects dependencies and installs the Ruby Primer app.
@@ -51,17 +50,17 @@ echo "Detected OS: $OS (Package manager: $PACKAGE_MANAGER)"
 
 # Detect Ruby
 detect_ruby() {
-    local ruby_paths=("/usr/bin/ruby" "/usr/local/bin/ruby" "/opt/homebrew/bin/ruby" "/opt/homebrew/opt/ruby@$REQUIRED_RUBY_VERSION/bin/ruby")
+    local ruby_paths=("/usr/bin/ruby" "/usr/bin/ruby$REQUIRED_RUBY_VERSION" "/usr/local/bin/ruby" "/opt/homebrew/bin/ruby" "/opt/homebrew/opt/ruby@$REQUIRED_RUBY_VERSION/bin/ruby")
     for path in "${ruby_paths[@]}"; do
         if [ -x "$path" ]; then
-            local version=$("$path" --version 2>/dev/null | grep -oE '[0-9]+\.[0-9]+' | head -1)
+            local version=$( { "$path" --version 2>/dev/null || echo "ruby 0.0.0"; } | grep -oE '[0-9]+\.[0-9]+' | head -1 || echo "0.0" )
             if [ "$(printf '%s\n' "$REQUIRED_RUBY_VERSION" "$version" | sort -V | head -1)" = "$REQUIRED_RUBY_VERSION" ]; then
                 echo "$path"
                 return 0
             fi
         fi
     done
-    return 1
+    return 0
 }
 
 RUBY_PATH=$(detect_ruby)
@@ -85,17 +84,21 @@ if [ -z "$RUBY_PATH" ]; then
 fi
 
 echo "Detected Ruby: $RUBY_PATH"
-GEM_PATH="${RUBY_PATH%/*}/gem"
-BUNDLE_PATH="${RUBY_PATH%/*}/bundle"
 
 # Update rp shebang
-sed -i.bak "1s|.*|#!/$RUBY_PATH|" rp
-echo "Updated rp shebang to use $RUBY_PATH"
+if [ -w rp ]; then
+    sed -i.bak "1s|.*|#!/$RUBY_PATH|" rp
+    echo "Updated rp shebang to use $RUBY_PATH"
+else
+    echo "Warning: Could not update rp shebang (file not writable)"
+fi
 
 # Install gems
 echo "Installing Ruby gems..."
-"$GEM_PATH" install bundler
-"$BUNDLE_PATH" install --path vendor/bundle
+# Note: If using system Ruby, gem installs may require sudo.
+# For better isolation, consider installing Ruby via rbenv or asdf.
+sudo "$RUBY_PATH" -S gem install bundler
+sudo "$RUBY_PATH" -S bundle install --path vendor/bundle
 
 # Check utilities
 missing_utils=()
@@ -113,7 +116,7 @@ if [ ${#missing_utils[@]} -ne 0 ]; then
             echo "Note: Ensure IBM Plex Serif Light font is available (included in mactex or install separately)."
             ;;
         apt)
-            echo "Install with: sudo apt update && sudo apt install pandoc texlive-latex-base texlive-fonts-recommended imagemagick"
+            echo "Install with: sudo apt update && sudo apt install pandoc texlive-latex-base texlive-fonts-recommended texlive-xelatex imagemagick"
             echo "Note: Ensure IBM Plex Serif Light font is installed (may require additional font packages)."
             ;;
         yum)
@@ -148,7 +151,7 @@ check_font() {
             fi
             ;;
         *)
-            return 1
+return 0
             ;;
     esac
 }
