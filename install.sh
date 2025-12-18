@@ -95,8 +95,10 @@ fi
 
 # Install gems
 echo "Installing Ruby gems..."
-"$RUBY_PATH" -S gem install bundler
-"$RUBY_PATH" -S bundle install --path vendor/bundle
+# Note: If using system Ruby, gem installs may require sudo.
+# For better isolation, consider installing Ruby via rbenv or asdf.
+sudo "$RUBY_PATH" -S gem install bundler
+sudo "$RUBY_PATH" -S bundle install --path vendor/bundle
 
 # Check utilities
 missing_utils=()
