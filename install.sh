@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 # Ruby Primer Installer
 # Detects dependencies and installs the Ruby Primer app.
@@ -115,7 +114,7 @@ if [ ${#missing_utils[@]} -ne 0 ]; then
             echo "Note: Ensure IBM Plex Serif Light font is available (included in mactex or install separately)."
             ;;
         apt)
-            echo "Install with: sudo apt update && sudo apt install pandoc texlive-latex-base texlive-fonts-recommended"
+            echo "Install with: sudo apt update && sudo apt install pandoc texlive-latex-base texlive-fonts-recommended texlive-xelatex"
             echo "Note: Ensure IBM Plex Serif Light font is installed (may require additional font packages)."
             ;;
         yum)
