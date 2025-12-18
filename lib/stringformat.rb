@@ -53,7 +53,7 @@ class String
         system("convert -density 130 #{pdf_file} #{png_file} >/dev/null 2>&1")
         if File.exist?(png_file)
           width = (cols * 0.75).to_i
-          if system("viu -w #{width} #{png_file} >/dev/null 2>&1")
+          if system("viu -w #{width} #{png_file}") == true
             # Clean up
             tmp_file.unlink
             File.unlink(pdf_file)
