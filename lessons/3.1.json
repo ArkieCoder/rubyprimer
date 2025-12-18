@@ -43,6 +43,39 @@
           "value": "3.1.3"
         }
       ]
+    },
+    {
+      "name": "Deleting Elements",
+      "items": [
+        {
+          "type": "paragraph",
+          "value": "One of the reasons Ruby is so popular with developers is the intuitiveness of the API. Most of the time you can guess the method name which will perform the task you have in your mind. Try guessing the method you need to use to delete the element '5' from the array given below."
+        },
+        {
+          "type": "test_example",
+          "value": "3.1.4"
+        },
+        {
+          "type": "paragraph",
+          "value": "I guess that was easy. What if you want to delete all the elements less than 4 from the given array. The example below does just that."
+        },
+        {
+          "type": "example",
+          "value": "3.1.5"
+        },
+        {
+          "type": "paragraph",
+          "value": "You'll notice that Ruby methods with multiple words are separated by underscores (_). This convention is called 'snake_casing' because `a_longer_method_looks_kind_of_like_a_snake`. Okay! Hands-on time. Delete all the even numbers from the array given below."
+        },
+        {
+          "type": "test_example",
+          "value": "3.1.6"
+        },
+        {
+          "type": "paragraph",
+          "value": "Doing this in languages like C or Java would take you a lot of boiler plate code. The beauty of Ruby is in its concise but readable code."
+        }
+      ]
     }
   ]
 }
