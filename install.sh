@@ -27,7 +27,7 @@ case "$OS" in
         if [ -f /etc/os-release ]; then
             . /etc/os-release
             case "$ID" in
-                ubuntu|debian|linuxmint)
+                ubuntu|debian)
                     PACKAGE_MANAGER="apt"
                     ;;
                 centos|rhel|fedora)
