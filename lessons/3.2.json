@@ -1,0 +1,48 @@
+{
+  "number": "3.2",
+  "name": "Iteration",
+  "subsections": [
+    {
+      "name": "Got 'for' Loops?",
+      "items": [
+        {
+          "type": "paragraph",
+          "value": "Ruby, like most languages, has the all-time favourite `for` loop. Interestingly, nobody uses it much - but let's leave the alternatives for the next exercise. Here's how you use a `for` loop in Ruby. Just run the code below to print all the values in the array."
+        },
+        {
+          "type": "example",
+          "value": "3.2.0"
+        },
+        {
+          "type": "paragraph",
+          "value": "Ok, your turn now. Copy the values less than `4` in the array stored in the `source` variable into the array in the `destination` variable."
+        },
+        {
+          "type": "test_example",
+          "value": "3.2.1"
+        }
+      ]
+    },
+    {
+      "name": "Looping with 'each'",
+      "items": [
+        {
+          "type": "paragraph",
+          "value": "Iteration is one of the most commonly cited examples of the usage of *blocks* in Ruby. The `Array#each` method accepts a block to which each element of the array is passed in turn. You will find that `for` loops are hardly ever used in Ruby, and `Array#each` and its siblings are the de-facto standard. We'll go into the relative merits of using `each` over for loops a little later once you've had some time to get familiar with it. Let's look at an example that prints all the values in an array."
+        },
+        {
+          "type": "example",
+          "value": "3.2.2"
+        },
+        {
+          "type": "paragraph",
+          "value": "Ok, now let's try the same thing we did with the `for` loop earlier - copy the values less than `4` in the array stored in the `source` variable to the array in the `destination` variable."
+        },
+        {
+          "type": "test_example",
+          "value": "3.2.3"
+        }
+      ]
+    }
+  ]
+}

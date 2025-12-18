@@ -65,7 +65,7 @@
         },
         {
           "type": "paragraph",
-          "value": "You'll notice that Ruby methods with multiple words are separated by underscores (_). This convention is called 'snake_casing' because `a_longer_method_looks_kind_of_like_a_snake`. Okay! Hands-on time. Delete all the even numbers from the array given below."
+          "value": "You'll notice that Ruby methods with multiple words are separated by underscores (`_`). This convention is called 'snake_casing' because `a_longer_method_looks_kind_of_like_a_snake`. Okay! Hands-on time. Delete all the even numbers from the array given below."
         },
         {
           "type": "test_example",
