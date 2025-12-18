@@ -27,7 +27,7 @@ case "$OS" in
         if [ -f /etc/os-release ]; then
             . /etc/os-release
             case "$ID" in
-                ubuntu|debian)
+                ubuntu|debian|linuxmint)
                     PACKAGE_MANAGER="apt"
                     ;;
                 centos|rhel|fedora)
@@ -51,7 +51,7 @@ echo "Detected OS: $OS (Package manager: $PACKAGE_MANAGER)"
 
 # Detect Ruby
 detect_ruby() {
-    local ruby_paths=("/usr/bin/ruby" "/usr/local/bin/ruby" "/opt/homebrew/bin/ruby" "/opt/homebrew/opt/ruby@$REQUIRED_RUBY_VERSION/bin/ruby")
+    local ruby_paths=("/usr/bin/ruby" "/usr/bin/ruby$REQUIRED_RUBY_VERSION" "/usr/local/bin/ruby" "/opt/homebrew/bin/ruby" "/opt/homebrew/opt/ruby@$REQUIRED_RUBY_VERSION/bin/ruby")
     for path in "${ruby_paths[@]}"; do
         if [ -x "$path" ]; then
             local version=$("$path" --version 2>/dev/null | grep -oE '[0-9]+\.[0-9]+' | head -1)
@@ -85,8 +85,6 @@ if [ -z "$RUBY_PATH" ]; then
 fi
 
 echo "Detected Ruby: $RUBY_PATH"
-GEM_PATH="${RUBY_PATH%/*}/gem"
-BUNDLE_PATH="${RUBY_PATH%/*}/bundle"
 
 # Update rp shebang
 sed -i.bak "1s|.*|#!/$RUBY_PATH|" rp
@@ -94,8 +92,8 @@ echo "Updated rp shebang to use $RUBY_PATH"
 
 # Install gems
 echo "Installing Ruby gems..."
-"$GEM_PATH" install bundler
-"$BUNDLE_PATH" install --path vendor/bundle
+"$RUBY_PATH" -S gem install bundler
+"$RUBY_PATH" -S bundle install --path vendor/bundle
 
 # Check utilities
 missing_utils=()
