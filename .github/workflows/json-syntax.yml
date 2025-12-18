@@ -10,6 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Check JSON syntax
-        run: |
-          find . -name '*.json' | xargs -I {} jq . {} > /dev/null
+       - name: Check for changed JSON files
+         id: check-json
+         run: |
+           changed_files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep '\.json$' || true)
+           if [ -z "$changed_files" ]; then
+             echo "No JSON files changed, skipping syntax check"
+             echo "skip=true" >> $GITHUB_OUTPUT
+           else
+             echo "skip=false" >> $GITHUB_OUTPUT
+           fi
+       - name: Check JSON syntax
+         if: steps.check-json.outputs.skip != 'true'
+         run: |
+           find . -name '*.json' | xargs -I {} jq . {} > /dev/null
