@@ -18,6 +18,14 @@ end
 load "#{DATA_DIR}/lib/stringformat.rb"
 load "#{DATA_DIR}/lib/sayings.rb"
 
+# Check terminal size
+cols = `tput cols`.to_i
+lines = `tput lines`.to_i
+if cols < 135 || lines < 40
+  puts "Terminal must be at least 135 columns x 40 rows. Current: #{cols}x#{lines}".red
+  exit 1
+end
+
 def print_header(header)
   puts ""
   figlet = RubyFiglet::Figlet.new(header, 'standard')
