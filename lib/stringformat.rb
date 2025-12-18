@@ -50,16 +50,23 @@ class String
       if kitty?
         # Convert PDF to PNG for Kitty
         png_file = tmp_file.path.sub('.md', '.png')
-        system("convert -density 600 #{pdf_file} #{png_file} >/dev/null 2>&1")
+        system("convert -density 130 #{pdf_file} #{png_file} >/dev/null 2>&1")
         if File.exist?(png_file)
-          png_data = File.read(png_file)
-          base64_data = Base64.strict_encode64(png_data)
-          # Clean up
-          tmp_file.unlink
-          File.unlink(pdf_file)
-          File.unlink(png_file)
-          # Return Kitty inline image sequence
-          "\e_Gf=100,a=T,t=d;#{base64_data}\e\\"
+          width = (cols * 0.75).to_i
+          viu_output = `viu -w #{width} #{png_file} 2>/dev/null`
+          if $?.success? && !viu_output.empty?
+            # Clean up
+            tmp_file.unlink
+            File.unlink(pdf_file)
+            File.unlink(png_file)
+            viu_output
+          else
+            # Fallback if viu fails
+            tmp_file.unlink
+            File.unlink(pdf_file)
+            File.unlink(png_file)
+            self
+          end
         else
           # Fallback if PNG conversion fails
           tmp_file.unlink
