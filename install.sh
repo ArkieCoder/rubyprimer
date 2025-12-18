@@ -61,7 +61,7 @@ detect_ruby() {
             fi
         fi
     done
-    return 1
+    return 0
 }
 
 RUBY_PATH=$(detect_ruby)
