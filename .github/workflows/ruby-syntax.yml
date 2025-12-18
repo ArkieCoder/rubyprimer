@@ -2,7 +2,8 @@ name: Ruby Syntax Check
 
 on:
   pull_request:
-
+    paths:
+      - '**/*.rb'
 jobs:
   ruby-syntax:
     runs-on: ubuntu-latest
@@ -12,17 +13,6 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-       - name: Check for changed Ruby files
-         id: check-ruby
-         run: |
-           changed_files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep '\.rb$' || true)
-           if [ -z "$changed_files" ]; then
-             echo "No Ruby files changed, skipping syntax check"
-             echo "skip=true" >> $GITHUB_OUTPUT
-           else
-             echo "skip=false" >> $GITHUB_OUTPUT
-           fi
-       - name: Check Ruby syntax
-         if: steps.check-ruby.outputs.skip != 'true'
-         run: |
-           find . -name '*.rb' -exec ruby -c {} \;
+      - name: Check Ruby syntax
+        run: |
+          find . -name '*.rb' -exec ruby -c {} \;
