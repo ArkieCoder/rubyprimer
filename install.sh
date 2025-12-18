@@ -4,7 +4,7 @@
 # Detects dependencies and installs the Ruby Primer app.
 
 REQUIRED_RUBY_VERSION="3.2"
-REQUIRED_UTILITIES=("pandoc" "xelatex" "convert")
+REQUIRED_UTILITIES=("pandoc" "xelatex" "convert" "viu")
 FONT_NAME="IBM Plex Serif Light"
 
 # Colors for output
@@ -112,19 +112,19 @@ if [ ${#missing_utils[@]} -ne 0 ]; then
     echo -e "${YELLOW}Missing utilities: ${missing_utils[*]}${NC}"
     case "$PACKAGE_MANAGER" in
         brew)
-            echo "Install with: brew install pandoc mactex imagemagick"
+            echo "Install with: brew install pandoc mactex imagemagick viu"
             echo "Note: Ensure IBM Plex Serif Light font is available (included in mactex or install separately)."
             ;;
         apt)
-            echo "Install with: sudo apt update && sudo apt install pandoc texlive-latex-base texlive-fonts-recommended texlive-xelatex imagemagick"
+            echo "Install with: sudo apt update && sudo apt install pandoc texlive-latex-base texlive-fonts-recommended imagemagick && cargo install viu"
             echo "Note: Ensure IBM Plex Serif Light font is installed (may require additional font packages)."
             ;;
         yum)
-            echo "Install with: sudo yum install pandoc texlive texlive-fonts ImageMagick"
+            echo "Install with: sudo yum install pandoc texlive texlive-fonts ImageMagick && cargo install viu"
             echo "Note: Ensure IBM Plex Serif Light font is installed."
             ;;
         *)
-            echo "Please install pandoc, xelatex, and imagemagick manually."
+            echo "Please install pandoc, xelatex, imagemagick, and viu manually (viu via 'cargo install viu')."
             echo "Note: Ensure IBM Plex Serif Light font is available for xelatex."
             ;;
     esac
