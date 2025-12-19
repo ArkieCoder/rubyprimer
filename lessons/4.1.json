@@ -1,0 +1,93 @@
+{
+  "number": "4.1",
+  "name": "Hashes, In And Out",
+  "subsections": [
+    {
+      "name": "Iterating over A Hash",
+      "items": [
+        {
+          "type": "paragraph",
+          "value": "You can use the `each` method to iterate over all the elements in a Hash. However unlike `Array#each`, when you iterate over a Hash using `each`, it passes two values to the block: the key and the value of each element."
+        },
+        {
+          "type": "paragraph",
+          "value": "Let us see how we can use the `each` method to display the restaurant menu."
+        },
+        {
+          "type": "example",
+          "value": "4.1.0"
+        },
+        {
+          "type": "paragraph",
+          "value": "The restaurant is doing well, but it is forced to raise prices due to increasing costs. Use the `each` method to increase the price of all the items in the `restaurant_menu` by 10%."
+        },
+        {
+          "type": "paragraph",
+          "value": "Remember: in the previous example we only displayed the keys and values of each item in the hash. But in this exercise, you have to modify the hash and increase the value of each item."
+        },
+        {
+          "type": "test_example",
+          "value": "4.1.1"
+        },
+        {
+          "type": "paragraph",
+          "value": "Ideally, any transformation of a collection (like in the example above) should produce a new collection with the original unchanged making the code easier to understand and manage."
+        },
+        {
+          "type": "paragraph",
+          "value": "However, speed and memory considerations often (and usually wrongly) trump maintainability and so the approach above is used quite frequently."
+        }
+      ]
+    },
+    {
+      "name": "Extracting The Keys And Values from A Hash",
+      "items": [
+        {
+          "type": "paragraph",
+          "value": "Every Hash object has two methods: `keys` and `values`. The `keys` method returns an array of all the keys in the `Hash`. Similarly `values` returns an array of just the values."
+        },
+        {
+          "type": "paragraph",
+          "value": "Try getting an array of all the keys in the `restaurant_menu` hash:"
+        },
+        {
+          "type": "test_example",
+          "value": "4.1.2"
+        }
+      ]
+    },
+    {
+      "name": "Newer, Faster",
+      "items": [
+        {
+          "type": "paragraph",
+          "value": "There are some little-known shortcuts for creating new hashes. They all provide a slightly different convenience. The latter two generate a hash directly from pre-existing key-value pairs. The first simply sets a default value for all elements in the hash. Let's take a look at that first."
+        },
+        {
+          "type": "example",
+          "value": "4.1.3"
+        },
+        {
+          "type": "paragraph",
+          "value": "As you can see, where a \"normal\" hash always returns `nil` by default, specifying a default in the `Hash` constructor will always return your custom default for any failed lookups on that hash instance."
+        },
+        {
+          "type": "paragraph",
+          "value": "The other two shortcuts actually use the `Hash` class's convenience method: `Hash::[]`. They're fairly straightforward. The first takes a flat list of parameters, arranged in pairs. The second takes just one parameter: an array containing arrays which are themselves key-value pairs. Where!  That's a mouthful.  Let's try the first form:"
+        },
+        {
+          "type": "example",
+          "value": "4.1.4"
+        },
+        {
+          "type": "paragraph",
+          "value": "Cool. And easy! You have to now use the second form the \"new hash\" shortcut in this exercise. Again, it takes an array of key-value pairs. These key-value pairs will just be 2-element arrays. I'll give you the key-value pairs to start with. Your objective is to build a Hash out of this array."
+        },
+        {
+          "type": "test_example",
+          "value": "4.1.5"
+        }
+      ]
+    }
+  ]
+}

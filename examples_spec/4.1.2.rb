@@ -8,7 +8,7 @@ describe "example code" do
     expect(result).to be_a(Array)
   end
 
-  it "should equal [4, 5, 6, 7]" do
-    expect(result).to eq([4, 5, 6, 7])
+  it "should contain the keys" do
+    expect(result.sort).to eq(["Coffee", "Dal Makhani", "Ramen"])
   end
 end
