@@ -206,7 +206,10 @@ def print_toc
   puts ""
   puts "Table of Contents".center(width).bold.underline
   entries.each do |entry|
-    puts "    • #{entry}"
+    id, _ = entry.split(': ', 2)
+    level = id.split('.').first.to_i
+    indent = ' ' * (6 + level * 2)
+    puts "#{indent}• #{entry}"
   end
   puts ""
 end
