@@ -201,15 +201,24 @@ def print_toc
     name = lesson_data['name'] || id
     entries << "#{id}: #{name}"
   end
+
   max_entry_length = entries.map(&:length).max || 0
-  width = 8 + max_entry_length
+  width = 10 + max_entry_length
   puts ""
   puts "Table of Contents".center(width).bold.underline
+
   entries.each do |entry|
-    id, _ = entry.split(': ', 2)
-    level = id.split('.').first.to_i
-    indent = ' ' * (6 + level * 2)
-    puts "#{indent}• #{entry}"
+    id, name = entry.split(': ', 2)
+    n_parts = id.split('.')
+    n_major = n_parts.first.to_i
+    n_minor = n_parts.last.to_i
+    fig_lines = RubyFiglet::Figlet.new(n_major.to_s, 'smshadow').to_s.lines.map(&:chomp)
+    padded_fig_line = sprintf("%-6s", fig_lines[n_minor] || (" " * 5))
+    if n_minor == 2
+      padded_fig_line.sub!(/  $/, ". ")
+    end
+    indent = " " * (n_major * 2)
+    puts "#{padded_fig_line}#{indent}• #{entry}"
   end
   puts ""
 end
