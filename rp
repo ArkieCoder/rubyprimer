@@ -207,18 +207,27 @@ def print_toc
   puts ""
   puts "Table of Contents".center(width).bold.underline
 
-  entries.each do |entry|
-    id, name = entry.split(': ', 2)
-    n_parts = id.split('.')
-    n_major = n_parts.first.to_i
-    n_minor = n_parts.last.to_i
-    fig_lines = RubyFiglet::Figlet.new(n_major.to_s, 'smshadow').to_s.lines.map(&:chomp)
-    padded_fig_line = sprintf("%-6s", fig_lines[n_minor] || (" " * 5))
-    if n_minor == 2
-      padded_fig_line.sub!(/  $/, ". ")
+  (0..3).each do |major|
+    fig_lines = RubyFiglet::Figlet.new(major.to_s, 'smshadow').to_s.lines.map(&:chomp)
+    (0..2).each do |minor|
+      padded_fig_line = sprintf("%-6s", fig_lines[minor] || (" " * 5))
+      if minor == 2
+        padded_fig_line.sub!(/  $/, ". ")
+      end
+      indent = " " * (major * 2)
+      lesson = entries.find { |e| e.start_with?("#{major}.#{minor}:") }
+      if lesson
+        puts "#{padded_fig_line}#{indent}• #{lesson}"
+      else
+        puts "#{padded_fig_line}"
+      end
     end
-    indent = " " * (n_major * 2)
-    puts "#{padded_fig_line}#{indent}• #{entry}"
+    # Print extra lessons with minor > 2
+    extra_lessons = entries.select { |e| e.start_with?("#{major}.") && e.split('.')[1].to_i > 2 }.sort_by { |e| e.split('.')[1].to_i }
+    extra_lessons.each do |lesson|
+      indent = " " * (major * 2)
+      puts "#{' ' * 6}#{indent}• #{lesson}"
+    end
   end
   puts ""
 end
