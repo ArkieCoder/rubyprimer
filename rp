@@ -207,7 +207,8 @@ def print_toc
   puts ""
   puts "Table of Contents".center(width).bold.underline
 
-  (0..3).each do |major|
+  major_levels = entries.map { |e| e.split('.').first.to_i }.uniq.sort
+  major_levels.each do |major|
     fig_lines = RubyFiglet::Figlet.new(major.to_s, 'smshadow').to_s.lines.map(&:chomp)
     (0..2).each do |minor|
       padded_fig_line = sprintf("%-6s", fig_lines[minor] || (" " * 5))

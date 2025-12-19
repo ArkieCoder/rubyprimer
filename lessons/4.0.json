@@ -1,0 +1,85 @@
+{
+  "number": "4.0",
+  "name": "Introduction to Ruby Hashes",
+  "subsections": [
+    {
+      "name": "Creating A Hash",
+      "items": [
+        {
+          "type": "paragraph",
+          "value": "A Hash is a collection of key-value pairs. You retrieve or create a new entry in a Hash by referring to its key. Hashes are also called 'associative arrays', 'dictionary', 'HashMap' etc. in other languages."
+        },
+        {
+          "type": "paragraph",
+          "value": "A blank hash can be declared using two curly braces -- `{}`. Here is an example of a Hash in Ruby:"
+        },
+        {
+          "type": "paragraph",
+          "value": "`student_ages = {`\n\n`  \"Jack\" => 10,`\n\n`  \"Jill\" => 12,`\n\n`  \"Bob\" => 14`\n\n`}`"
+        },
+        {
+          "type": "paragraph",
+          "value": "The names (`Jack`, `Jill`, `Bob`) are the 'keys', and `10`, `12` and `14` are the corresponding values. Now try creating a simple hash with the following keys and values:"
+        },
+        {
+          "type": "paragraph",
+          "value": "`Ramen = 3`\n\n`Dal Makhani = 4`\n\n`Tea = 2`"
+        },
+        {
+          "type": "test_example",
+          "value": "4.0.0"
+        }
+      ]
+    },
+    {
+      "name": "Fetch Values from A Hash",
+      "items": [
+        {
+          "type": "paragraph",
+          "value": "You can retrieve values from a Hash object using the `[]` operator. The key of the required value should be enclosed within these square brackets."
+        },
+        {
+          "type": "paragraph",
+          "value": "Now try finding the price of a Ramen from the `restaurant_menu` hash: write the name of the object, follow it with a square bracket, and place the key inside the brackets. In this case the key is a string so enclose the key in quotes."
+        },
+        {
+          "type": "test_example",
+          "value": "4.0.1"
+        },
+        {
+          "type": "paragraph",
+          "value": "That was very simple, wasn't it? One small step at a time!"
+        }
+      ]
+    },
+    {
+      "name": "Modifying A Hash",
+      "items": [
+        {
+          "type": "paragraph",
+          "value": "Once you've created a `Hash` object, you would want to add new key-value pairs as well as modify existing values."
+        },
+        {
+          "type": "paragraph",
+          "value": "Here is how you would set the price of the `\"Ramen\"` key in the `restaurant_menu` hash:"
+        },
+        {
+          "type": "paragraph",
+          "value": "`restaurant_menu[\"Ramen\"] = 3`"
+        },
+        {
+          "type": "paragraph",
+          "value": "In fact, you can create a blank hash and add all the values later.  Now why don't you try assigning the following values to an empty hash?"
+        },
+        {
+          "type": "paragraph",
+          "value": "`Dal Makhani = 4.5`\n\n`Tea = 2`"
+        },
+        {
+          "type": "test_example",
+          "value": "4.0.2"
+        }
+      ]
+    }
+  ]
+}
